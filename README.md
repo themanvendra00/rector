@@ -6,6 +6,8 @@
 
 Rector is a web app that surfaces hand-picked links and context for people who build or operate software. The home page is organized into sections for **sites & tools**, **repositories**, and **free collections**, with short framing notes between sections. The goal is signal over noise: fewer tabs, clearer next steps, and resources that hold up in real projects—not just tutorials.
 
+<img width="1901" height="919" alt="image" src="https://github.com/user-attachments/assets/3080afe8-3901-4605-b135-be31f8225124" />
+
 ## Why it’s useful
 
 ### For IT professionals
@@ -14,11 +16,15 @@ Rector is a web app that surfaces hand-picked links and context for people who b
 - **Quality bar** — Emphasis on repositories and materials that reflect serious engineering (structure, maintenance, clarity), not one-off demos.
 - **Single bookmark** — One place to return to when onboarding teammates, researching a stack, or refreshing your tool belt.
 
+<img width="1900" height="960" alt="image" src="https://github.com/user-attachments/assets/cf9660a7-69c9-438c-9a4e-4811c85d8abd" />
+
 ### For learners
 
 - **Structured exposure** — You see categories of resources professionals rely on, not just random search results.
 - **Free-first collections** — Access to legitimate free learning paths and references alongside “what pros use.”
 - **Bridge to practice** — Links to real-world repos and utilities help you connect concepts to how teams ship software.
+
+<img width="1900" height="996" alt="image" src="https://github.com/user-attachments/assets/5619c7e2-214f-418d-bd3e-c2a5088d6b90" />
 
 ## Tech stack
 
@@ -65,3 +71,8 @@ Optional variables (see `lib/site.ts`):
 ## Deploy
 
 You can deploy on [Vercel](https://vercel.com) or any platform that supports Next.js. See the [Next.js deployment docs](https://nextjs.org/docs/app/building-your-application/deploying) for details.
+
+<img width="1900" height="222" alt="image" src="https://github.com/user-attachments/assets/96afeca6-756b-42a7-bf93-ab2c4c7e81ad" />
+<img width="1901" height="409" alt="image" src="https://github.com/user-attachments/assets/7563f1dc-5bb4-4a0c-ac6d-aba096a1086d" />
+
+

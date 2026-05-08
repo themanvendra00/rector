@@ -1,36 +1,67 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Rector
 
-## Getting Started
+**Rector** is a curated resource hub for IT professionals and learners. It brings together useful websites and tools, production-minded Git repositories, and free learning collections in one place—so you spend less time searching and more time building.
 
-First, run the development server:
+## What is Rector?
+
+Rector is a web app that surfaces hand-picked links and context for people who build or operate software. The home page is organized into sections for **sites & tools**, **repositories**, and **free collections**, with short framing notes between sections. The goal is signal over noise: fewer tabs, clearer next steps, and resources that hold up in real projects—not just tutorials.
+
+## Why it’s useful
+
+### For IT professionals
+
+- **Faster discovery** — Curated starting points for tools, docs, and patterns you actually use in production.
+- **Quality bar** — Emphasis on repositories and materials that reflect serious engineering (structure, maintenance, clarity), not one-off demos.
+- **Single bookmark** — One place to return to when onboarding teammates, researching a stack, or refreshing your tool belt.
+
+### For learners
+
+- **Structured exposure** — You see categories of resources professionals rely on, not just random search results.
+- **Free-first collections** — Access to legitimate free learning paths and references alongside “what pros use.”
+- **Bridge to practice** — Links to real-world repos and utilities help you connect concepts to how teams ship software.
+
+## Tech stack
+
+| Layer | Technology |
+|--------|------------|
+| Framework | [Next.js](https://nextjs.org) 16 (App Router) |
+| UI | [React](https://react.dev) 19 |
+| Language | [TypeScript](https://www.typescriptlang.org) |
+| Styling | [Tailwind CSS](https://tailwindcss.com) v4 |
+| Linting | [ESLint](https://eslint.org) with `eslint-config-next` |
+| Fonts | [DM Sans](https://fonts.google.com/specimen/DM+Sans), [JetBrains Mono](https://www.jetbrains.com/lp/mono/) (via `next/font`) |
+
+SEO and sharing are handled with metadata, `sitemap.ts`, `robots.ts`, and JSON-LD in the app. Images use AVIF/WebP where supported (`next.config.ts`).
+
+## Getting started
+
+Install dependencies and run the dev server:
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Other scripts:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build   # production build
+npm run start   # run production server (after build)
+npm run lint    # ESLint
+```
 
-## Learn More
+## Environment variables
 
-To learn more about Next.js, take a look at the following resources:
+Optional variables (see `lib/site.ts`):
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+| Variable | Purpose |
+|----------|---------|
+| `NEXT_PUBLIC_SITE_URL` | Canonical site URL for metadata, sitemap, and structured data |
+| `NEXT_PUBLIC_CONTACT_EMAIL` | Shown in the contact section when set |
+| `VERCEL_URL` | Used automatically on Vercel when `NEXT_PUBLIC_SITE_URL` is unset |
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Deploy
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+You can deploy on [Vercel](https://vercel.com) or any platform that supports Next.js. See the [Next.js deployment docs](https://nextjs.org/docs/app/building-your-application/deploying) for details.

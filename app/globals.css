@@ -1,26 +1,102 @@
 @import "tailwindcss";
 
+/* Rector — performance archive / developer dashboard aesthetic */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --bg: #fafafa;
+  --surface: #ffffff;
+  --surface-elevated: #f4f4f5;
+  --surface-muted: #e4e4e7;
+  --text-primary: #18181b;
+  --text-secondary: #52525b;
+  --text-muted: #71717a;
+  --lime: #84cc16;
+  --lime-dim: #65a30d;
+  --lime-glow: color-mix(in srgb, var(--lime) 28%, transparent);
+  --border: #e4e4e7;
+  --border-strong: #d4d4d8;
+}
+
+.dark {
+  --bg: #000000;
+  --surface: #0d0d0d;
+  --surface-elevated: #161616;
+  --surface-muted: #1c1c1c;
+  --text-primary: #fafafa;
+  --text-secondary: #a3a3a3;
+  --text-muted: #737373;
+  --lime: #c5ff4a;
+  --lime-dim: #9fcc3a;
+  --lime-glow: color-mix(in srgb, var(--lime) 35%, transparent);
+  --border: #2a2a2a;
+  --border-strong: #3f3f3f;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-background: var(--bg);
+  --color-surface: var(--surface);
+  --color-surface-elevated: var(--surface-elevated);
+  --color-surface-muted: var(--surface-muted);
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-muted: var(--text-muted);
+  --color-accent: var(--lime);
+  --color-accent-hover: #b4ef3d;
+  --color-accent-subtle: var(--lime-glow);
+  --color-accent-dim: var(--lime-dim);
+  --color-border: var(--border);
+  --color-border-strong: var(--border-strong);
+  --font-sans: var(--font-dm-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-jetbrains-mono), ui-monospace, monospace;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--bg);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+}
+
+:focus-visible {
+  outline: 2px solid var(--lime);
+  outline-offset: 2px;
+}
+
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+@keyframes archive-pulse-marquee {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-50%);
+  }
+}
+
+.terminal-marquee-inner {
+  animation: archive-pulse-marquee 48s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .terminal-marquee-inner {
+    animation: none;
+  }
 }
